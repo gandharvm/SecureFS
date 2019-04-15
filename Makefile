@@ -21,12 +21,12 @@ testcase4: filesys.c testcase4.c
 run:
 	./base
 	./testcase1
-	./base
-	./testcase2
-	./base
-	./testcase3
-	./base
-	./testcase4
+# 	./base
+# 	./testcase2
+# 	./base
+# 	./testcase3
+# 	./base
+# 	./testcase4
 
 clean:
 	rm -rf testcase1 testcase2 testcase3 testcase4 base *.txt

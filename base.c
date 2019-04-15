@@ -37,14 +37,16 @@ int main_loop (char *filename)
 		}
 		total_size -= size;
 	}
-
+	printf("%s\n", "Written");
 	s_close (fd1);
 
+	printf("%s\n","s=close");
 	fd2 = s_open (filename, O_RDONLY, 0);
 	if (fd2 == -1) {
 		printf ("Unable to open file descriptor2\n");
 		return 0;
 	}
+	printf("%s\n","s_open" );
 	total_size = 128000;
 	while (total_size) {
 		size = (total_size > 128) ? 128 : total_size;
@@ -65,6 +67,7 @@ int main ()
 	char filename[32];
 
 	system ("rm -rf foo*.txt");
+	system ("rm -rf secure.txt");
 
 	if (filesys_init() == 1) {
 		printf ("Unable to init filesys\n");
